@@ -1,0 +1,23 @@
+# Python environment of scripts/. The R packages of mfuzz/ are listed at the top of those scripts.
+# CPLEX is not included: run_community.py needs the full IBM ILOG CPLEX Optimization Studio (22.2 was used here)
+# with its Python interface installed into this environment as described by IBM. The cplex package on pip or conda
+# is the Community Edition (at most 1,000 variables and 1,000 constraints) and cannot solve these models.
+# memote_summary.py and energy_cycles.py also run with the free solver GLPK (swiglpk, included below).
+# The draft models were built with CarveMe 1.6.6 (bioconda: carveme=1.6.6), which is not needed by these scripts.
+name: bpa-gsmm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - cobra==0.31.1
+      - micom==0.39.0
+      - memote==0.17.0
+      - optlang==1.9.0
+      - python-libsbml==5.21.1
+      - swiglpk==5.0.13
+      - pandas==2.3.3
+      - numpy==2.2.6
+      - scipy==1.15.3
+      - matplotlib==3.10.8
